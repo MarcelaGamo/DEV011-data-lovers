@@ -5,8 +5,6 @@ import { sortData } from "./dataFunctions.js";
 import { computeStats } from "./dataFunctions.js";
 import data from "./data/ghibli/ghibli.js";
 
-console.log(computeStats, renderItems, data);
-
 const root = document.getElementById("root");
 root.appendChild(renderItems(data.films));
 
@@ -18,7 +16,6 @@ selectFilter.addEventListener("change", () => {
   console.log(resulFilter);
   root.innerHTML = "";
   root.appendChild(renderItems(resulFilter));
-
 });
 
 const selectSort = document.getElementsByName("alphabet")[0];
@@ -54,13 +51,16 @@ estadistica.addEventListener("click", () => {
     El promedio de scores en Studio Ghibli es de: ${peliculasScoreMayor95.estadistica}
     `;
   estadistica.innerHTML = resultadoTexto;
-
-//Función Boton limpiar.
-const ResetBotton = document.querySelector("button[data-testid='button-clear']");
-ResetBotton.addEventListener("click", () => {
-  root.innerHTML = "";
-  estadistica.innerHTML="Datos";
-  root.appendChild(renderItems(data.films));
-
 });
 
+//Función Boton limpiar.
+
+const ResetBotton = document.querySelector(
+  "button[data-testid='button-clear']"
+);
+ResetBotton.addEventListener("click", (event) => {
+  const clickedButton = event.target;
+  root.innerHTML = "";
+  estadistica.innerHTML = "Datos";
+  root.appendChild(renderItems(data.films));
+});
