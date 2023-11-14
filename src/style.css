@@ -242,12 +242,12 @@ button:hover {
   margin-top: 80px;
   width: 100%;
   padding: 20px 8%;
-  background: #000000;
-  color: #EFEFEF;
+  background: #f6f5f5;
+  color: #e4a7f5;
   display: flex;
   border-radius: 3px;
   border-top-style: inset;
-  border-color: #65B9FA;
+  border-color: #fccfba;
   border-width: 5px;
 }
 .footer div {
